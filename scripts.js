@@ -2630,8 +2630,8 @@ return Popper;
 //# sourceMappingURL=tooltip.min.js.map
 
 ;/*!
- * perfect-scrollbar v1.5.3
- * Copyright 2021 Hyunje Jun, MDBootstrap and Contributors
+ * perfect-scrollbar v1.5.0
+ * Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
  * Licensed under MIT
  */
 
@@ -2960,9 +2960,8 @@ return Popper;
     var roundedScrollTop = Math.floor(element.scrollTop);
     var rect = element.getBoundingClientRect();
 
-    i.containerWidth = Math.round(rect.width);
-    i.containerHeight = Math.round(rect.height);
-
+    i.containerWidth = Math.ceil(rect.width);
+    i.containerHeight = Math.ceil(rect.height);
     i.contentWidth = element.scrollWidth;
     i.contentHeight = element.scrollHeight;
 
@@ -3197,9 +3196,7 @@ return Popper;
       updateGeometry(i);
 
       e.stopPropagation();
-      if (e.type.startsWith('touch') && e.changedTouches.length > 1) {
-        e.preventDefault();
-      }
+      e.preventDefault();
     }
 
     function mouseUpHandler() {
@@ -3718,11 +3715,6 @@ return Popper;
           }
 
           if (Math.abs(speed.x) < 0.01 && Math.abs(speed.y) < 0.01) {
-            clearInterval(easingLoop);
-            return;
-          }
-
-          if (!i.element) {
             clearInterval(easingLoop);
             return;
           }
