@@ -350,8 +350,8 @@
 
 // Section
 @mixin kt-menu-ver-section-base($section) {
-	margin: kt-get($section, self, margin);
-	height: kt-get($section, self, height);
+	//margin: kt-get($section, self, margin);
+	//height: kt-get($section, self, height);
 
 	.kt-menu__section-text {
 		font-size: kt-get($section, text, font-size);
@@ -438,7 +438,7 @@
 		.kt-menu__nav {
 			margin: 0;
 			list-style: none;
-			padding: kt-get($layout, default, self, padding);
+			padding:0 0px;
 
 			// Base markup
 			.kt-menu__scroll {

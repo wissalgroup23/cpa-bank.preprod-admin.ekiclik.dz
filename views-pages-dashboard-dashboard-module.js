@@ -296,7 +296,7 @@ var routes = [{
         canActivate: [ngx_permissions__WEBPACK_IMPORTED_MODULE_11__["NgxPermissionsGuard"]],
         data: {
             permissions: {
-                only: ['ALL_HOME'],
+                only: ['ALL_HOME', 'ONLY_READ'],
                 redirectTo: '/error/403',
             },
             title: 'DashBoard'
