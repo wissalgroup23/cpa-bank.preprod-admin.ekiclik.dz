@@ -519,33 +519,22 @@ var ProfileComponent = /** @class */ (function () {
      * get String role names
      */
     ProfileComponent.prototype.getStringRoles = function (roles) {
-        var roleNames = [];
-        roles.forEach(function (role) {
-            switch (role) {
-                case 'ROLE_SUPERADMIN':
-                    roleNames.push('Super Administrateur');
-                    break;
-                case 'ROLE_MARKETING':
-                    roleNames.push('Commercial');
-                    break;
-                case 'ROLE_EDITOR':
-                    roleNames.push('Editeur');
-                    break;
-                case 'ROLE_ACCOUNTING':
-                    roleNames.push('comptabilité');
-                    break;
-                case 'ROLE_ADMIN':
-                    roleNames.push('Administrateur');
-                    break;
-                case 'ROLE_GUEST':
-                    roleNames.push('INVITÉ');
-                    break;
-                default:
-                    roleNames.push(role);
-                    break;
-            }
-        });
-        return roleNames;
+        switch (roles) {
+            case 'ROLE_SUPERADMIN':
+                return 'Super Administrateur';
+            case 'ROLE_MARKETING':
+                return 'Commercial';
+            case 'ROLE_EDITOR':
+                return 'Editeur';
+            case 'ROLE_ACCOUNTING':
+                return 'comptabilité';
+            case 'ROLE_ADMIN':
+                return 'Administrateur';
+            case 'ROLE_GUEST':
+                return 'INVITÉ';
+            default:
+                return roles;
+        }
     };
     ProfileComponent.ctorParameters = function () { return [
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
